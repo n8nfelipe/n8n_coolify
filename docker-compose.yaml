@@ -50,7 +50,7 @@ services:
       - DB_PORT =  $DB_PORT_VECTOR 
       - POSTGRES_USER = $USER_VECTOR 
       - POSTGRES_PASSWORD = $PASSWORD_VECTOR 
-      - POSTGRES_DB = $DB_VECTOR
+      - 'POSTGRES_DB = ${DB_VECTOR:-n8n}'
     ports:
       - '5233:5233'
     volumes:
