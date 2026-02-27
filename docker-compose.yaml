@@ -51,10 +51,11 @@ services:
       - POSTGRES_USER=$SERVICE_USER_POSTGRES
       - POSTGRES_PASSWORD=$SERVICE_PASSWORD_POSTGRES
       - POSTGRES_DB=DB_VECTOR
+      - PGDATA: /data/postgres
     ports:
       - '5233:5233'
     volumes:
-      - 'pgdata:/var/lib/postgresql/data'
+      - 'pgdata:/data/postgres'
       - './postgres/schema.sql:/docker-entrypoint-initdb.d/schema.sql'
     
 volumes:
