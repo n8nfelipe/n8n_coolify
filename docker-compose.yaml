@@ -47,7 +47,7 @@ services:
     image: 'pgvector/pgvector:pg17'
     container_name: pgvector-db
     environment:
-      - DB_PORT=5233
+      - PGPORT=5233
       - POSTGRES_USER=$SERVICE_USER_POSTGRES
       - POSTGRES_PASSWORD=$SERVICE_PASSWORD_POSTGRES
       - POSTGRES_DB=DB_VECTOR
