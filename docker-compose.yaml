@@ -47,14 +47,14 @@ services:
     image: 'pgvector/pgvector:pg17'
     container_name: pgvector-db
     environment:
-      - DB_PORT=$DB_PORT_VECTOR 
-      - POSTGRES_USER=$USER_VECTOR 
-      - POSTGRES_PASSWORD=$PASSWORD_VECTOR 
-      - 'POSTGRES_DB=${DB_VECTOR:-n8n}'
+      - DB_PORT=5233
+      - POSTGRES_USER=$SERVICE_USER_POSTGRES
+      - POSTGRES_PASSWORD=$SERVICE_PASSWORD_POSTGRES
+      - POSTGRES_DB=DB_VECTOR
     ports:
       - '5233:5233'
     volumes:
-      - 'pgdata:/var/lib/postgresql/vector/data'
+      - 'pgdata:/var/lib/postgresql/data'
       - './postgres/schema.sql:/docker-entrypoint-initdb.d/schema.sql'
     
 volumes:
