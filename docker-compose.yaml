@@ -47,7 +47,8 @@ services:
     image: 'pgvector/pgvector:pg17'
     container_name: pgvector-db
     environment:
-      DB_PORT:  $DB_HOST_VECTOR # 5233
+      DB_HOST: pgvector
+      DB_PORT:  $DB_PORT_VECTOR # 5233
       POSTGRES_USER:  $USER_VECTOR # sbfj86QK2y5VaQJA
       POSTGRES_PASSWORD:  $PASSWORD_VECTOR # 07uScwEPgDSBcLWBxkXOmVqAomPT4l1AZXklYAYbYZ7GzVtIvlBzeffqt4rzED2Z
       POSTGRES_DB:  $DB_VECTOR # db_advocacia
