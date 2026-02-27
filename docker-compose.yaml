@@ -50,7 +50,7 @@ services:
       - PGPORT=5233
       - POSTGRES_USER=$SERVICE_USER_POSTGRES
       - POSTGRES_PASSWORD=$SERVICE_PASSWORD_POSTGRES
-      - POSTGRES_DB=DB_VECTOR
+      - POSTGRES_DB=db_advocacia
       - PGDATA=/data/postgres
     ports:
       - '5233:5233'
