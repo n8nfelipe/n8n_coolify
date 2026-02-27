@@ -51,7 +51,7 @@ services:
       - POSTGRES_USER=$SERVICE_USER_POSTGRES
       - POSTGRES_PASSWORD=$SERVICE_PASSWORD_POSTGRES
       - POSTGRES_DB=DB_VECTOR
-      - PGDATA: /data/postgres
+      - PGDATA=/data/postgres
     ports:
       - '5233:5233'
     volumes:
