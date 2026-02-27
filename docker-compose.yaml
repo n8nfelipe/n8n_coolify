@@ -52,6 +52,13 @@ services:
       - POSTGRES_PASSWORD=SCRAM-SHA-256$4096:684e9c3cae4a5c7c0b25da962f741bc028f459ea218345c7fa6686bfd145363f
       - 'POSTGRES_DB=${POSTGRES_DB:-n8n}'
       - PGDATA=/data/postgres
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - 'pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}'
+      interval: 5s
+      timeout: 20s
+      retries: 10
     ports:
       - '5233:5233'
     volumes:
