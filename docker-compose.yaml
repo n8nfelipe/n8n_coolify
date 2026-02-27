@@ -12,9 +12,9 @@ services:
       - 'DB_POSTGRESDB_DATABASE=${POSTGRES_DB:-n8n}'
       - DB_POSTGRESDB_HOST=postgresql
       - DB_POSTGRESDB_PORT=5432
-      - DB_POSTGRESDB_USER="HfkB3tDeu6sEQhGm"
+      - DB_POSTGRESDB_USER=HfkB3tDeu6sEQhGm
       - DB_POSTGRESDB_SCHEMA=public
-      - DB_POSTGRESDB_PASSWORD="SCRAM-SHA-256$4096:684e9c3cae4a5c7c0b25da962f741bc028f459ea218345c7fa6686bfd145363f"
+      - DB_POSTGRESDB_PASSWORD=SCRAM-SHA-256$4096:684e9c3cae4a5c7c0b25da962f741bc028f459ea218345c7fa6686bfd145363f
     volumes:
       - 'n8n-data:/home/node/.n8n'
     depends_on:
@@ -33,7 +33,7 @@ services:
     volumes:
       - 'postgresql-data:/var/lib/postgresql/data'
     environment:
-      - POSTGRES_USER="HfkB3tDeu6sEQhGm"
+      - POSTGRES_USER=HfkB3tDeu6sEQhGm
       - POSTGRES_PASSWORD="SCRAM-SHA-256$4096:684e9c3cae4a5c7c0b25da962f741bc028f459ea218345c7fa6686bfd145363f"
       - 'POSTGRES_DB=${POSTGRES_DB:-n8n}'
     healthcheck:
@@ -48,8 +48,8 @@ services:
     container_name: pgvector-db
     environment:
       - PGPORT=5233
-      - POSTGRES_USER="HfkB3tDeu6sEQhGm"
-      - POSTGRES_PASSWORD="SCRAM-SHA-256$4096:684e9c3cae4a5c7c0b25da962f741bc028f459ea218345c7fa6686bfd145363f"
+      - POSTGRES_USER=HfkB3tDeu6sEQhGm
+      - POSTGRES_PASSWORD=SCRAM-SHA-256$4096:684e9c3cae4a5c7c0b25da962f741bc028f459ea218345c7fa6686bfd145363f
       - PGDATA=/data/postgres
     healthcheck:
       test:
